@@ -1,45 +1,77 @@
-site_name: 元宇宙联合创新实验室工具箱
-site_url: https://your-site-url.com/
-site_author: DoggyChen
+site_name: 元宇宙联合创新实验室
 site_description: >-
-  MoMask AI 项目文档，基于 MkDocs Material，支持多端浏览、全文搜索、丰富的 Markdown 扩展。
+  香港科技大学（广州）元宇宙联合创新实验室 — 数字人、虚拟现实、元宇宙内容生成与人工智能研究
+site_url: https://metaverse-lab.hkust-gz.edu.cn/
+site_author: DoggyChen
+
+# -------------------------------------------------------------------------- #
+# 仓库信息（参考 FastAPI 样式）                                              #
+# -------------------------------------------------------------------------- #
+repo_name: Metaverse-Lab/Metaverse-Website
+repo_url: https://github.com/Metaverse-Lab/Metaverse-Website
+
+# -------------------------------------------------------------------------- #
+# 主题配置（融合 FastAPI Material 风格）                                      #
+# -------------------------------------------------------------------------- #
 theme:
   name: material
+  custom_dir: overrides
+  language: zh
+  icon:
+    repo: octicons/mark-github-24
+  # logo 和 favicon 路径相对于 docs/ 目录
+  # logo: assets/logo.svg
+  # favicon: assets/favicon.png
   features:
-    - content.action.edit
-    - content.action.view
+    # --- 内容增强 ---
     - content.code.annotate
     - content.code.copy
+    - content.footnote.tooltips
+    - content.tabs.link
     - content.tooltips
+    # --- 导航增强 ---
     - navigation.footer
     - navigation.indexes
-    - navigation.sections
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.path
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.top
     - navigation.tracking
+    # --- 搜索增强 ---
     - search.highlight
     - search.share
     - search.suggest
+    # --- 目录增强 ---
     - toc.follow
   palette:
+    # 跟随系统
     - media: "(prefers-color-scheme)"
       toggle:
-        icon: material/link
+        icon: material/lightbulb-auto
         name: 切换到浅色模式
+    # 浅色模式
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: teal
+      accent: amber
       toggle:
-        icon: material/toggle-switch
+        icon: material/lightbulb
         name: 切换到深色模式
+    # 深色模式
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: black
-      accent: indigo
+      primary: teal
+      accent: amber
       toggle:
-        icon: material/toggle-switch-off
+        icon: material/lightbulb-outline
         name: 跟随系统
+
+# -------------------------------------------------------------------------- #
+# Markdown 扩展                                                              #
+# -------------------------------------------------------------------------- #
 markdown_extensions:
   - admonition
   - attr_list
@@ -52,8 +84,13 @@ markdown_extensions:
   - pymdownx.betterem
   - pymdownx.caret
   - pymdownx.details
-  - pymdownx.emoji
-  - pymdownx.highlight
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.magiclink
@@ -61,25 +98,45 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.snippets
   - pymdownx.superfences
-  - pymdownx.tabbed
-  - pymdownx.tasklist
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.tilde
 
+# -------------------------------------------------------------------------- #
+# 插件                                                                       #
+# -------------------------------------------------------------------------- #
 plugins:
-  - search
+  - search:
+      lang: zh
 
+# -------------------------------------------------------------------------- #
+# 额外配置                                                                   #
+# -------------------------------------------------------------------------- #
+extra:
+  generator: false
+
+# -------------------------------------------------------------------------- #
+# 导航结构（参考 FastAPI 多级嵌套 + 空字符串分组风格）                        #
+# -------------------------------------------------------------------------- #
 nav:
-  - index.md
-  - SceneForge 场景生成系统: 
-      - sceneForge/index.md
-      - 基于Unity的场景生成插件: sceneForge/holodeckPlugin.md
-  - DeepOwl AI动作生成系统:
+  - 首页: index.md
+  - SceneForge 场景生成:
+      - 概述: sceneForge/index.md
+      - Holodeck 场景生成插件: sceneForge/holodeckPlugin.md
+  - DeepOwl AI 动作生成:
       - 前言: momask_ai/index.md
       - 程序总体介绍: momask_ai/02_overview.md
       - 模块清单列表: momask_ai/03_module_list.md
-      - 模块开发技术文档:
-          - MoMask核心逻辑模块: momask_ai/04_1_momask_logic.md
+      - "":
+        - 模块开发技术文档:
+          - MoMask 核心逻辑模块: momask_ai/04_1_momask_logic.md
           - 操作符模块: momask_ai/04_2_addon_operators.md
-          - UI面板模块: momask_ai/04_3_addon_panels.md
-          - BVH转换工具模块: momask_ai/04_4_bvhtransformer.md
+          - UI 面板模块: momask_ai/04_3_addon_panels.md
+          - BVH 转换工具模块: momask_ai/04_4_bvhtransformer.md
           - 热加载工具模块: momask_ai/04_5_hotload.md
+  - 虚拟课堂 — 经济学教学实验:
+      - 概述: virtualClassroom/index.md
+  - 军事 VR 培训 — 手势捕捉交互:
+      - 概述: militaryVR/index.md
