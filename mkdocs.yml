@@ -55,16 +55,16 @@ theme:
     # 浅色模式
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: teal
-      accent: amber
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/lightbulb
         name: 切换到深色模式
     # 深色模式
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: teal
-      accent: amber
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/lightbulb-outline
         name: 跟随系统
@@ -117,6 +117,9 @@ plugins:
 extra:
   generator: false
 
+extra_css:
+  - stylesheets/extra.css
+
 # -------------------------------------------------------------------------- #
 # 导航结构（参考 FastAPI 多级嵌套 + 空字符串分组风格）                        #
 # -------------------------------------------------------------------------- #
@@ -136,7 +139,3 @@ nav:
           - UI 面板模块: momask_ai/04_3_addon_panels.md
           - BVH 转换工具模块: momask_ai/04_4_bvhtransformer.md
           - 热加载工具模块: momask_ai/04_5_hotload.md
-  - 虚拟课堂 — 经济学教学实验:
-      - 概述: virtualClassroom/index.md
-  - 军事 VR 培训 — 手势捕捉交互:
-      - 概述: militaryVR/index.md
