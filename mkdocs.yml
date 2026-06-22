@@ -1,0 +1,85 @@
+site_name: 元宇宙联合创新实验室工具箱
+site_url: https://your-site-url.com/
+site_author: DoggyChen
+site_description: >-
+  MoMask AI 项目文档，基于 MkDocs Material，支持多端浏览、全文搜索、丰富的 Markdown 扩展。
+theme:
+  name: material
+  features:
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: 切换到浅色模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: 跟随系统
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - pymdownx.tilde
+
+plugins:
+  - search
+
+nav:
+  - index.md
+  - SceneForge 场景生成系统: 
+      - sceneForge/index.md
+      - 基于Unity的场景生成插件: sceneForge/holodeckPlugin.md
+  - DeepOwl AI动作生成系统:
+      - 前言: momask_ai/index.md
+      - 程序总体介绍: momask_ai/02_overview.md
+      - 模块清单列表: momask_ai/03_module_list.md
+      - 模块开发技术文档:
+          - MoMask核心逻辑模块: momask_ai/04_1_momask_logic.md
+          - 操作符模块: momask_ai/04_2_addon_operators.md
+          - UI面板模块: momask_ai/04_3_addon_panels.md
+          - BVH转换工具模块: momask_ai/04_4_bvhtransformer.md
+          - 热加载工具模块: momask_ai/04_5_hotload.md
