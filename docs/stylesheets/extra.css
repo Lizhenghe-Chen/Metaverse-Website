@@ -1,6 +1,185 @@
 /* ============================================================
-   Metaverse Lab 首页自定义样式
+   Metaverse Lab 全局自定义样式
    ============================================================ */
+
+/* ---------- 全局渐变背景（使用 CSS 变量优雅适配深浅主题） ---------- */
+body {
+  background: var(--bg-gradient) fixed !important;
+  background-attachment: fixed !important;
+}
+
+/* 深色模式渐变 */
+body[data-md-color-scheme="slate"],
+body:not([data-md-color-scheme="default"]) {
+  --bg-gradient: linear-gradient(135deg, #0f0c29 0%, #1a1a4e 30%, #24243e 60%, #0f0c29 100%);
+}
+
+/* 浅色模式渐变 */
+body[data-md-color-scheme="default"] {
+  --bg-gradient: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 30%, #e3f2fd 60%, #e8eaf6 100%);
+}
+
+/* ---------- 内容区域半透明卡片（使用 CSS 变量） ---------- */
+.md-content {
+  background: var(--md-content-bg) !important;
+  border-radius: 16px;
+  border: var(--md-content-border);
+}
+
+body[data-md-color-scheme="slate"] .md-content,
+body:not([data-md-color-scheme="default"]) .md-content {
+  --md-content-bg: rgba(255, 255, 255, 0.05);
+  --md-content-border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body[data-md-color-scheme="default"] .md-content {
+  --md-content-bg: rgba(255, 255, 255, 0.5);
+  --md-content-border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* ---------- 导航栏毛玻璃（安全使用 backdrop-filter） ---------- */
+.md-header {
+  background: var(--md-header-bg) !important;
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  border-bottom: var(--md-header-border);
+}
+
+body[data-md-color-scheme="slate"] .md-header,
+body:not([data-md-color-scheme="default"]) .md-header {
+  --md-header-bg: rgba(15, 12, 41, 0.6);
+  --md-header-border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body[data-md-color-scheme="default"] .md-header {
+  --md-header-bg: rgba(255, 255, 255, 0.6);
+  --md-header-border: 1px solid rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+/* 浅色模式 header 内的图标和按钮颜色 */
+body[data-md-color-scheme="default"] .md-header__button {
+  color: rgba(0, 0, 0, 0.54) !important;
+}
+
+body[data-md-color-scheme="default"] .md-header__topic {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+/* ---------- 导航标签栏毛玻璃 ---------- */
+.md-tabs {
+  background: var(--md-tabs-bg) !important;
+  backdrop-filter: blur(12px) saturate(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
+  border-bottom: var(--md-tabs-border);
+}
+
+body[data-md-color-scheme="slate"] .md-tabs,
+body:not([data-md-color-scheme="default"]) .md-tabs {
+  --md-tabs-bg: rgba(15, 12, 41, 0.4);
+  --md-tabs-border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+body[data-md-color-scheme="default"] .md-tabs {
+  --md-tabs-bg: rgba(255, 255, 255, 0.4);
+  --md-tabs-border: 1px solid rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+body[data-md-color-scheme="default"] .md-tabs__link {
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+body[data-md-color-scheme="default"] .md-tabs__link--active {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+/* ---------- 侧边栏半透明（仅桌面端） ---------- */
+.md-sidebar {
+  background: transparent !important;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar .md-sidebar__scrollwrap {
+    background: var(--md-sidebar-bg) !important;
+    border-radius: 12px;
+    border: var(--md-sidebar-border);
+  }
+
+  body[data-md-color-scheme="slate"] .md-sidebar .md-sidebar__scrollwrap,
+  body:not([data-md-color-scheme="default"]) .md-sidebar .md-sidebar__scrollwrap {
+    --md-sidebar-bg: rgba(255, 255, 255, 0.03);
+    --md-sidebar-border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  body[data-md-color-scheme="default"] .md-sidebar .md-sidebar__scrollwrap {
+    --md-sidebar-bg: rgba(255, 255, 255, 0.35);
+    --md-sidebar-border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+}
+
+/* ---------- 产品卡片/场景卡片/高亮列表深浅适配 ---------- */
+.product-card {
+  background: var(--card-bg);
+  border: var(--card-border);
+}
+
+body[data-md-color-scheme="slate"] .product-card,
+body:not([data-md-color-scheme="default"]) .product-card {
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body[data-md-color-scheme="default"] .product-card {
+  --card-bg: rgba(255, 255, 255, 0.5);
+  --card-border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.scenario-card {
+  background: var(--scenario-bg);
+  border: var(--scenario-border);
+}
+
+body[data-md-color-scheme="slate"] .scenario-card,
+body:not([data-md-color-scheme="default"]) .scenario-card {
+  --scenario-bg: rgba(255, 255, 255, 0.03);
+  --scenario-border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body[data-md-color-scheme="default"] .scenario-card {
+  --scenario-bg: rgba(255, 255, 255, 0.35);
+  --scenario-border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.highlights-section .tabbed-content ul li {
+  background: var(--highlight-bg);
+  border: var(--highlight-border);
+}
+
+body[data-md-color-scheme="slate"] .highlights-section .tabbed-content ul li,
+body:not([data-md-color-scheme="default"]) .highlights-section .tabbed-content ul li {
+  --highlight-bg: rgba(255, 255, 255, 0.03);
+  --highlight-border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body[data-md-color-scheme="default"] .highlights-section .tabbed-content ul li {
+  --highlight-bg: rgba(255, 255, 255, 0.35);
+  --highlight-border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* ---------- footer 分割线深浅适配 ---------- */
+.footer-copyright {
+  border-top: var(--footer-border);
+}
+
+body[data-md-color-scheme="slate"] .footer-copyright,
+body:not([data-md-color-scheme="default"]) .footer-copyright {
+  --footer-border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body[data-md-color-scheme="default"] .footer-copyright {
+  --footer-border: 1px solid rgba(0, 0, 0, 0.06);
+}
 
 /* ---------- 隐藏首页自动生成的 h1 ---------- */
 .md-content .md-typeset > h1:first-child {
@@ -122,13 +301,13 @@
 }
 
 .product-card {
-  border: 1px solid var(--md-typeset-table-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 2rem 2rem 1.75rem;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  background: var(--md-default-bg-color);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .product-card::before {
@@ -227,8 +406,8 @@
   gap: 0.85rem;
   padding: 1rem 1.25rem;
   border-radius: 10px;
-  background: var(--md-code-bg-color);
-  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   transition: all 0.25s ease;
   margin: 0;
 }
@@ -313,8 +492,8 @@
   text-align: center;
   padding: 1.75rem 1.25rem;
   border-radius: 12px;
-  background: var(--md-code-bg-color);
-  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   transition: all 0.3s ease;
 }
 
@@ -395,6 +574,6 @@
   padding: 1.25rem 2rem;
   font-size: 0.78rem;
   color: var(--md-default-fg-color--lighter);
-  border-top: 1px solid var(--md-typeset-table-color);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
   opacity: 0.7;
 }

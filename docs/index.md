@@ -53,10 +53,10 @@ title: 元宇宙联合创新实验室
 
 === ":material-cube-outline: SceneForge 场景生成"
 
-    `<figure class="showcase-figure" markdown>`
-      ![SceneForge](https://placehold.co/800x400/4658FF/FFFFFF?text=SceneForge+%E5%9C%BA%E6%99%AF%E7%94%9F%E6%88%90)
-      `<figcaption>`从提示词到完整 3D 场景的一键式转化`</figcaption>`
-    `</figure>`
+    <figure class="showcase-figure">
+      <img src="assets/Unity场景生成.png" alt="SceneForge">
+      <figcaption>从提示词到完整 3D 场景的一键式转化</figcaption>
+    </figure>
 
     - :material-lightning-bolt:**自然语言驱动** — 输入"一间带落地窗的北欧风格卧室"，自动生成完整室内场景
     - :material-database-sync: **双轨制资产管线** — 本地 AI2-THOR 预置库 + 云端 Objathor 海量资产库
@@ -68,10 +68,10 @@ title: 元宇宙联合创新实验室
 
 === ":material-run: DeepOwl AI 动作生成"
 
-    `<figure class="showcase-figure" markdown>`
-      ![DeepOwl](https://placehold.co/800x400/4658FF/FFFFFF?text=DeepOwl+AI+%E5%8A%A8%E4%BD%9C%E7%94%9F%E6%88%90)
-      `<figcaption>`文本驱动的高质量 3D 角色动作生成`</figcaption>`
-    `</figure>`
+    <figure class="showcase-figure">
+      <img src="https://placehold.co/800x400/4658FF/FFFFFF?text=DeepOwl+AI+%E5%8A%A8%E4%BD%9C%E7%94%9F%E6%88%90" alt="DeepOwl">
+      <figcaption>文本驱动的高质量 3D 角色动作生成</figcaption>
+    </figure>
 
     - :material-text-recognition:**文本到动作** — 输入"一个人向前走然后跳起来"，自动生成对应骨骼动画
     - :material-brain: **MoMask 深度学习** — 基于掩码建模的离散动作生成，支持多种动作风格
