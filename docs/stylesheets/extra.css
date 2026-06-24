@@ -235,40 +235,76 @@ body[data-md-color-scheme="default"] .footer-copyright {
 .hero-actions {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
 
 .hero-actions .md-button {
-  padding: 0.65rem 1.75rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border-radius: 8px;
-  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.02em;
+}
+
+.hero-actions .md-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .hero-actions .md-button--primary {
   background: linear-gradient(135deg, #4658FF, #5C6CFF);
   border: none;
   color: #fff !important;
-  box-shadow: 0 2px 12px rgba(70, 88, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(70, 88, 255, 0.3);
 }
 
 .hero-actions .md-button--primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(70, 88, 255, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(70, 88, 255, 0.45);
+}
+
+.hero-actions .md-button--primary:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(70, 88, 255, 0.3);
 }
 
 .hero-actions .md-button:not(.md-button--primary) {
-  border: 1.5px solid var(--md-typeset-table-color);
+  border: 2px solid var(--md-typeset-table-color);
   color: var(--md-default-fg-color) !important;
   background: transparent;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .hero-actions .md-button:not(.md-button--primary):hover {
   border-color: #4658FF;
   color: #4658FF !important;
-  background: rgba(70, 88, 255, 0.03);
+  background: rgba(70, 88, 255, 0.06);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(70, 88, 255, 0.12);
+}
+
+.hero-actions .md-button:not(.md-button--primary):active {
+  transform: translateY(-1px);
+}
+
+.hero-actions .md-button .twemoji {
+  transition: transform 0.3s ease;
+}
+
+.hero-actions .md-button:hover .twemoji {
+  transform: translateX(4px);
 }
 
 /* ---------- 区块标题 ---------- */
@@ -577,3 +613,67 @@ body[data-md-color-scheme="default"] .footer-copyright {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   opacity: 0.7;
 }
+
+/* ---------- 下载按钮容器 ---------- */
+.download-buttons {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0 1.75rem;
+}
+
+/* ---------- 下载按钮样式 ---------- */
+.download-buttons .md-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 2px solid var(--md-typeset-table-color);
+  color: var(--md-typeset-a-color) !important;
+  background: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+
+.download-buttons .md-button:hover {
+  transform: translateY(-3px);
+  border-color: #4658FF;
+  color: #4658FF !important;
+  background: rgba(70, 88, 255, 0.06);
+  box-shadow: 0 4px 20px rgba(70, 88, 255, 0.15);
+}
+
+.download-buttons .md-button:active {
+  transform: translateY(-1px);
+}
+
+.download-buttons .md-button--primary {
+  background: linear-gradient(135deg, #4658FF, #5C6CFF);
+  border: none;
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(70, 88, 255, 0.3);
+}
+
+.download-buttons .md-button--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(70, 88, 255, 0.45);
+}
+
+/* ---------- 禁用按钮样式 ---------- */
+.download-buttons .md-button--disabled,
+.download-buttons .md-button--disabled.md-button--primary {
+  cursor: not-allowed;
+  opacity: 0.45;
+  pointer-events: none;
+  background: var(--md-default-fg-color--lighter);
+  border-color: transparent;
+  color: var(--md-default-bg-color) !important;
+  box-shadow: none;
+  transform: none !important;
+}
+
+
