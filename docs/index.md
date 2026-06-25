@@ -69,7 +69,7 @@ title: 元宇宙联合创新实验室
 === ":material-run: DeepOwl AI 动作生成"
 
     <figure class="showcase-figure">
-      <img src="https://placehold.co/800x400/4658FF/FFFFFF?text=DeepOwl+AI+%E5%8A%A8%E4%BD%9C%E7%94%9F%E6%88%90" alt="DeepOwl">
+      <img src="assets/owl-cover.gif" alt="DeepOwl">
       <figcaption>文本驱动的高质量 3D 角色动作生成</figcaption>
     </figure>
 
