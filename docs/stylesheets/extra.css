@@ -228,8 +228,59 @@ body[data-md-color-scheme="default"] .footer-copyright {
   font-size: 0.85rem;
   color: var(--md-default-fg-color--lighter);
   letter-spacing: 0.18em;
-  margin-bottom: 2.25rem;
+  margin-bottom: 1.5rem;
   opacity: 0.8;
+}
+
+/* ---------- Hero 赞助商 Logo ---------- */
+.hero-sponsors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-sponsors .sponsor-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  max-width: 200px;
+}
+
+/* 中间分隔线 */
+.hero-sponsors .sponsor-divider {
+  width: 1px;
+  height: 26px;
+  background: currentColor;
+  opacity: 0.15;
+  flex-shrink: 0;
+}
+
+.hero-sponsors .sponsor-logo {
+  opacity: 0.65;
+  transition: opacity 0.3s ease;
+  max-height: 30px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 深色模式：logo 反白 */
+body[data-md-color-scheme="slate"] .hero-sponsors .sponsor-logo,
+body:not([data-md-color-scheme="default"]) .hero-sponsors .sponsor-logo {
+  filter: brightness(0) invert(1);
+}
+
+/* 浅色模式：logo 保持原色 */
+body[data-md-color-scheme="default"] .hero-sponsors .sponsor-logo {
+  filter: none;
+}
+
+.hero-sponsors .sponsor-logo:hover {
+  opacity: 1;
 }
 
 .hero-actions {

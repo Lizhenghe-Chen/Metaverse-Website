@@ -10,6 +10,16 @@ title: 元宇宙联合创新实验室
 <div class="hero-subtitle">香港科技大学（广州）</div>
 <div class="hero-tagline">DIGITAL HUMAN  ·  VIRTUAL REALITY  ·  METAVERSE  ·  AI</div>
 
+<div class="hero-sponsors">
+  <div class="sponsor-item">
+    <img src="assets/hkustgz_logo.08a72d26.png" alt="香港科技大学（广州）" class="sponsor-logo">
+  </div>
+  <div class="sponsor-divider"></div>
+  <div class="sponsor-item">
+    <img src="assets/chinamobile.png" alt="中国移动" class="sponsor-logo">
+  </div>
+</div>
+
 <div class="hero-actions" markdown>
 [SceneForge 场景生成 :octicons-arrow-right-24:](sceneForge/index.md){ .md-button }
 [DeepOwl 动作生成 :octicons-arrow-right-24:](momask_ai/index.md){ .md-button }
