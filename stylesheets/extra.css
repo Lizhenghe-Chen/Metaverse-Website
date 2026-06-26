@@ -1,0 +1,737 @@
+/* ============================================================
+   Metaverse Lab 全局自定义样式
+   ============================================================ */
+
+/* ---------- 全局渐变背景（使用 CSS 变量优雅适配深浅主题） ---------- */
+body {
+  background: var(--bg-gradient) fixed !important;
+  background-attachment: fixed !important;
+}
+
+/* 深色模式渐变 */
+body[data-md-color-scheme="slate"],
+body:not([data-md-color-scheme="default"]) {
+  --bg-gradient: linear-gradient(135deg, #0f0c29 0%, #1a1a4e 30%, #24243e 60%, #0f0c29 100%);
+}
+
+/* 浅色模式渐变 */
+body[data-md-color-scheme="default"] {
+  --bg-gradient: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 30%, #e3f2fd 60%, #e8eaf6 100%);
+}
+
+/* ---------- 内容区域半透明卡片（使用 CSS 变量） ---------- */
+.md-content {
+  background: var(--md-content-bg) !important;
+  border-radius: 16px;
+  border: var(--md-content-border);
+}
+
+body[data-md-color-scheme="slate"] .md-content,
+body:not([data-md-color-scheme="default"]) .md-content {
+  --md-content-bg: rgba(255, 255, 255, 0.05);
+  --md-content-border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body[data-md-color-scheme="default"] .md-content {
+  --md-content-bg: rgba(255, 255, 255, 0.5);
+  --md-content-border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* ---------- 导航栏毛玻璃（安全使用 backdrop-filter） ---------- */
+.md-header {
+  background: var(--md-header-bg) !important;
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  border-bottom: var(--md-header-border);
+}
+
+body[data-md-color-scheme="slate"] .md-header,
+body:not([data-md-color-scheme="default"]) .md-header {
+  --md-header-bg: rgba(15, 12, 41, 0.6);
+  --md-header-border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body[data-md-color-scheme="default"] .md-header {
+  --md-header-bg: rgba(255, 255, 255, 0.6);
+  --md-header-border: 1px solid rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+/* 浅色模式 header 内的图标和按钮颜色 */
+body[data-md-color-scheme="default"] .md-header__button {
+  color: rgba(0, 0, 0, 0.54) !important;
+}
+
+body[data-md-color-scheme="default"] .md-header__topic {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+/* ---------- 导航标签栏毛玻璃 ---------- */
+.md-tabs {
+  background: var(--md-tabs-bg) !important;
+  backdrop-filter: blur(12px) saturate(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
+  border-bottom: var(--md-tabs-border);
+}
+
+body[data-md-color-scheme="slate"] .md-tabs,
+body:not([data-md-color-scheme="default"]) .md-tabs {
+  --md-tabs-bg: rgba(15, 12, 41, 0.4);
+  --md-tabs-border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+body[data-md-color-scheme="default"] .md-tabs {
+  --md-tabs-bg: rgba(255, 255, 255, 0.4);
+  --md-tabs-border: 1px solid rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+body[data-md-color-scheme="default"] .md-tabs__link {
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+body[data-md-color-scheme="default"] .md-tabs__link--active {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+/* ---------- 侧边栏半透明（仅桌面端） ---------- */
+.md-sidebar {
+  background: transparent !important;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar .md-sidebar__scrollwrap {
+    background: var(--md-sidebar-bg) !important;
+    border-radius: 12px;
+    border: var(--md-sidebar-border);
+  }
+
+  body[data-md-color-scheme="slate"] .md-sidebar .md-sidebar__scrollwrap,
+  body:not([data-md-color-scheme="default"]) .md-sidebar .md-sidebar__scrollwrap {
+    --md-sidebar-bg: rgba(255, 255, 255, 0.03);
+    --md-sidebar-border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  body[data-md-color-scheme="default"] .md-sidebar .md-sidebar__scrollwrap {
+    --md-sidebar-bg: rgba(255, 255, 255, 0.35);
+    --md-sidebar-border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+}
+
+/* ---------- 产品卡片/场景卡片/高亮列表深浅适配 ---------- */
+.product-card {
+  background: var(--card-bg);
+  border: var(--card-border);
+}
+
+body[data-md-color-scheme="slate"] .product-card,
+body:not([data-md-color-scheme="default"]) .product-card {
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body[data-md-color-scheme="default"] .product-card {
+  --card-bg: rgba(255, 255, 255, 0.5);
+  --card-border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.scenario-card {
+  background: var(--scenario-bg);
+  border: var(--scenario-border);
+}
+
+body[data-md-color-scheme="slate"] .scenario-card,
+body:not([data-md-color-scheme="default"]) .scenario-card {
+  --scenario-bg: rgba(255, 255, 255, 0.03);
+  --scenario-border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body[data-md-color-scheme="default"] .scenario-card {
+  --scenario-bg: rgba(255, 255, 255, 0.35);
+  --scenario-border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* highlights li 深浅色变量由下方主题块统一注入 */
+
+/* ---------- footer 分割线深浅适配 ---------- */
+.footer-copyright {
+  border-top: var(--footer-border);
+}
+
+body[data-md-color-scheme="slate"] .footer-copyright,
+body:not([data-md-color-scheme="default"]) .footer-copyright {
+  --footer-border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body[data-md-color-scheme="default"] .footer-copyright {
+  --footer-border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* ---------- 隐藏首页自动生成的 h1 ---------- */
+.md-content .md-typeset > h1:first-child {
+  display: none;
+}
+
+/* ---------- Hero 区域 ---------- */
+.hero-section {
+  text-align: center;
+  padding: 5rem 2rem 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%,
+      rgba(70, 88, 255, 0.07) 0%,
+      transparent 70%);
+  pointer-events: none;
+}
+
+.hero-logo {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #4658FF 0%, #5C6CFF 50%, #8E99FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--md-default-fg-color--light);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+}
+
+.hero-tagline {
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--lighter);
+  letter-spacing: 0.18em;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+/* ---------- Hero 赞助商 Logo ---------- */
+.hero-sponsors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero-sponsors .sponsor-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  max-width: 30%;
+}
+
+/* 中间分隔线 */
+.hero-sponsors .sponsor-divider {
+  width: 1px;
+  height: 1.8em;
+  background: currentColor;
+  opacity: 0.15;
+  flex-shrink: 0;
+}
+
+.hero-sponsors .sponsor-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+}
+
+.hero-sponsors .sponsor-logo {
+  opacity: 0.65;
+  transition: opacity 0.3s ease;
+  width: 85%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 深色模式：logo 反白 */
+body[data-md-color-scheme="slate"] .hero-sponsors .sponsor-logo,
+body:not([data-md-color-scheme="default"]) .hero-sponsors .sponsor-logo {
+  filter: brightness(0) invert(1);
+}
+
+/* 浅色模式：logo 保持原色 */
+body[data-md-color-scheme="default"] .hero-sponsors .sponsor-logo {
+  filter: none;
+}
+
+.hero-sponsors .sponsor-logo:hover {
+  opacity: 1;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.hero-actions .md-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.02em;
+}
+
+.hero-actions .md-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-actions .md-button--primary {
+  background: linear-gradient(135deg, #4658FF, #5C6CFF);
+  border: none;
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(70, 88, 255, 0.3);
+}
+
+.hero-actions .md-button--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(70, 88, 255, 0.45);
+}
+
+.hero-actions .md-button--primary:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(70, 88, 255, 0.3);
+}
+
+.hero-actions .md-button:not(.md-button--primary) {
+  border: 2px solid var(--md-typeset-table-color);
+  color: var(--md-default-fg-color) !important;
+  background: transparent;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.hero-actions .md-button:not(.md-button--primary):hover {
+  border-color: #4658FF;
+  color: #4658FF !important;
+  background: rgba(70, 88, 255, 0.06);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(70, 88, 255, 0.12);
+}
+
+.hero-actions .md-button:not(.md-button--primary):active {
+  transform: translateY(-1px);
+}
+
+.hero-actions .md-button .twemoji {
+  transition: transform 0.3s ease;
+}
+
+.hero-actions .md-button:hover .twemoji {
+  transform: translateX(4px);
+}
+
+/* ---------- 区块标题 ---------- */
+.section-title {
+  text-align: center;
+  font-size: 1.65rem;
+  font-weight: 600;
+  margin: 3.5rem 0 2rem;
+  position: relative;
+  letter-spacing: -0.01em;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #4658FF, #8E99FF);
+  border-radius: 2px;
+  margin: 0.65rem auto 0;
+}
+
+/* ---------- 产品卡片 ---------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.product-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem 2rem 1.75rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.product-card.card-sceneforge::before {
+  background: linear-gradient(90deg, #4658FF, #8E99FF);
+}
+
+.product-card.card-deepowl::before {
+  background: linear-gradient(90deg, #6366F1, #A78BFA);
+}
+
+.product-card:hover {
+  border-color: transparent;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.product-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.product-card p {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin: 0 0 1.25rem;
+}
+
+.product-card .card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: #4658FF !important;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.product-card .card-link:hover {
+  gap: 0.55rem;
+}
+
+/* ---------- 亮点 Tab 区域 ---------- */
+.highlights-section {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.highlights-section .tabbed-set {
+  border: none;
+  box-shadow: none;
+}
+
+.highlights-section .tabbed-labels {
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.highlights-section .tabbed-labels > label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.55rem 1.75rem;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.2s ease;
+}
+
+.highlights-section .tabbed-content {
+  padding: 0;
+}
+
+/* 亮点列表样式 */
+.highlights-section .tabbed-content ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 亮点卡片 */
+.highlights-section .tabbed-content ul li {
+  display: block;
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.55;
+  background: var(--highlight-bg);
+  border: var(--highlight-border);
+  transition: all 0.25s ease;
+}
+
+body[data-md-color-scheme="slate"] .highlights-section .tabbed-content ul li,
+body:not([data-md-color-scheme="default"]) .highlights-section .tabbed-content ul li {
+  --highlight-bg: rgba(255, 255, 255, 0.03);
+  --highlight-border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body[data-md-color-scheme="default"] .highlights-section .tabbed-content ul li {
+  --highlight-bg: rgba(255, 255, 255, 0.35);
+  --highlight-border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.highlights-section .tabbed-content ul li::before {
+  content: none;
+}
+
+.highlights-section .tabbed-content ul li:hover {
+  border-color: var(--md-typeset-table-color);
+  background: var(--md-default-bg-color);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.highlights-section .tabbed-content ul li .twemoji {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.3rem;
+  color: #4658FF;
+  opacity: 0.85;
+}
+
+.highlights-section .tabbed-content ul li strong {
+  display: inline;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--md-typeset-color);
+}
+
+/* 配图容器 */
+.showcase-figure {
+  text-align: center;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.md-typeset .showcase-figure {
+  width: 100%;
+  max-width: 100%;
+}
+
+.showcase-figure img {
+  border-radius: 12px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.showcase-figure figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+  opacity: 0.8;
+}
+
+/* Tab 内链接样式 */
+.highlights-section .tabbed-content .card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: #4658FF !important;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.highlights-section .tabbed-content .card-link:hover {
+  gap: 0.55rem;
+}
+
+/* ---------- 应用场景 ---------- */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.scenario-card {
+  text-align: center;
+  padding: 1.75rem 1.25rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+}
+
+.scenario-card:hover {
+  background: var(--md-default-bg-color);
+  border-color: var(--md-typeset-table-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.scenario-card .twemoji {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-bottom: 0.6rem;
+  opacity: 0.85;
+}
+
+.scenario-card strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.scenario-card p {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.5;
+}
+
+/* ---------- Footer CTA ---------- */
+.footer-cta {
+  text-align: center;
+  padding: 3.5rem 2rem 2rem;
+  position: relative;
+}
+
+.footer-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 100%,
+      rgba(70, 88, 255, 0.05) 0%,
+      transparent 70%);
+  pointer-events: none;
+}
+
+.footer-cta h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.footer-cta p {
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.footer-cta .md-button {
+  padding: 0.55rem 1.75rem;
+  font-weight: 500;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  border: 1.5px solid var(--md-typeset-table-color);
+  transition: all 0.25s ease;
+}
+
+.footer-cta .md-button:hover {
+  border-color: #4658FF;
+  color: #4658FF !important;
+  background: rgba(70, 88, 255, 0.03);
+}
+
+.footer-copyright {
+  text-align: center;
+  padding: 1.25rem 2rem;
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--lighter);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  opacity: 0.7;
+}
+
+/* ---------- 下载按钮容器 ---------- */
+.download-buttons {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0 1.75rem;
+}
+
+/* ---------- 下载按钮样式 ---------- */
+.download-buttons .md-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 2px solid var(--md-typeset-table-color);
+  color: var(--md-typeset-a-color) !important;
+  background: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+
+.download-buttons .md-button:hover {
+  transform: translateY(-3px);
+  border-color: #4658FF;
+  color: #4658FF !important;
+  background: rgba(70, 88, 255, 0.06);
+  box-shadow: 0 4px 20px rgba(70, 88, 255, 0.15);
+}
+
+.download-buttons .md-button:active {
+  transform: translateY(-1px);
+}
+
+.download-buttons .md-button--primary {
+  background: linear-gradient(135deg, #4658FF, #5C6CFF);
+  border: none;
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(70, 88, 255, 0.3);
+}
+
+.download-buttons .md-button--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(70, 88, 255, 0.45);
+}
+
+/* ---------- 禁用按钮样式 ---------- */
+.download-buttons .md-button--disabled,
+.download-buttons .md-button--disabled.md-button--primary {
+  cursor: not-allowed;
+  opacity: 0.45;
+  pointer-events: none;
+  background: var(--md-default-fg-color--lighter);
+  border-color: transparent;
+  color: var(--md-default-bg-color) !important;
+  box-shadow: none;
+  transform: none !important;
+}
+
+
