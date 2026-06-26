@@ -237,7 +237,7 @@ body[data-md-color-scheme="default"] .footer-copyright {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   margin-bottom: 2rem;
 }
 
@@ -246,13 +246,13 @@ body[data-md-color-scheme="default"] .footer-copyright {
   align-items: center;
   justify-content: center;
   flex: 1 1 0;
-  max-width: 200px;
+  max-width: 30%;
 }
 
 /* 中间分隔线 */
 .hero-sponsors .sponsor-divider {
   width: 1px;
-  height: 26px;
+  height: 1.8em;
   background: currentColor;
   opacity: 0.15;
   flex-shrink: 0;
@@ -261,9 +261,7 @@ body[data-md-color-scheme="default"] .footer-copyright {
 .hero-sponsors .sponsor-logo {
   opacity: 0.65;
   transition: opacity 0.3s ease;
-  max-height: 30px;
-  max-width: 100%;
-  width: auto;
+  width: 85%;
   height: auto;
   object-fit: contain;
 }

@@ -3,8 +3,8 @@
 面向 Unity 的 3D 室内场景生成平台，通过前端 Unity 插件与后端深度生成服务（LLM + 空间布局算法）的集成，实现从自然语言描述到 3D 场景的一键式转化。主要面向具身智能训练、VR/AR 原型设计、医疗/工业仿真及科研数据集生成。
 
 <div class="download-buttons">
-  <a class="md-button md-button--disabled">⬇️ 下载 Unity 插件 (.unitypackage)</a>
-  <a class="md-button md-button--disabled">🐳 下载 Docker 镜像</a>
+  <a class="md-button md-button--primary" href="https://gofile.me/7U4bu/bbxMTlVwm" target="_blank" rel="noopener noreferrer">⬇️ 下载 Unity 插件 (.unitypackage)</a>
+  <a class="md-button md-button--primary" href="https://gofile.me/7U4bu/RLbhv081O" target="_blank" rel="noopener noreferrer">🐳 下载 Docker 镜像</a>
 </div>
 
 | 环境 | 要求 |
