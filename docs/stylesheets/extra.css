@@ -486,10 +486,18 @@ body[data-md-color-scheme="default"] .footer-copyright {
   margin: 0.5rem 0 1.25rem;
 }
 
+.md-typeset .showcase-figure {
+  width: 100%;
+  max-width: 100%;
+}
+
 .showcase-figure img {
   border-radius: 12px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-  max-width: 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .showcase-figure figcaption {

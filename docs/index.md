@@ -54,7 +54,7 @@ title: 元宇宙联合创新实验室
 === ":material-cube-outline: SceneForge 场景生成"
 
     <figure class="showcase-figure">
-      <img src="assets/Unity场景生成.png" alt="SceneForge">
+      <img src="assets/sceneForgeCover.gif" alt="SceneForge">
       <figcaption>从提示词到完整 3D 场景的一键式转化</figcaption>
     </figure>
 
