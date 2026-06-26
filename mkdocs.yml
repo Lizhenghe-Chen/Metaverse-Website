@@ -126,9 +126,9 @@ extra_css:
 nav:
   - 首页: index.md
   - SceneForge 场景生成:
-      - 概述: sceneForge/index.md
+      - sceneForge/index.md
   - DeepOwl AI 动作生成:
-      - 概述: momask_ai/index.md
+      - momask_ai/index.md
       - 程序总体介绍: momask_ai/02_overview.md
       - 模块清单列表: momask_ai/03_module_list.md
       - "归档":

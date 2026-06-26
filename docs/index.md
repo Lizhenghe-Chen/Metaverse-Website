@@ -12,19 +12,17 @@ title: 元宇宙联合创新实验室
 
 <div class="hero-sponsors">
   <div class="sponsor-item">
-    <img src="assets/hkustgz_logo.08a72d26.png" alt="香港科技大学（广州）" class="sponsor-logo">
+    <a href="https://www.hkust-gz.edu.cn/" target="_blank" rel="noopener">
+      <img src="assets/hkustgz_logo.08a72d26.png" alt="香港科技大学（广州）" class="sponsor-logo">
+    </a>
   </div>
   <div class="sponsor-divider"></div>
   <div class="sponsor-item">
-    <img src="assets/chinamobile.png" alt="中国移动" class="sponsor-logo">
+    <a href="https://www.10086.cn/index/gd/index_200_200.html" target="_blank" rel="noopener">
+      <img src="assets/chinamobile.png" alt="中国移动" class="sponsor-logo">
+    </a>
   </div>
 </div>
-
-<div class="hero-actions" markdown>
-[SceneForge 场景生成 :octicons-arrow-right-24:](sceneForge/index.md){ .md-button }
-[DeepOwl 动作生成 :octicons-arrow-right-24:](momask_ai/index.md){ .md-button }
-</div>
-
 </div>
 
 ---
@@ -57,7 +55,7 @@ title: 元宇宙联合创新实验室
 
 ---
 
-<h2 class="section-title">核心亮点</h2>
+<h2 class="section-title">产品亮点</h2>
 
 <div class="highlights-section" markdown>
 
@@ -72,7 +70,7 @@ title: 元宇宙联合创新实验室
     - :material-database-sync: **双轨制资产管线** — 本地 AI2-THOR 预置库 + 云端 Objathor 海量资产库
     - :material-timer-sync: **非阻塞异步生成** — 生成过程不卡顿 Unity 主线程，实时监控任务进度
     - :material-axis-arrow: **物理落地对齐** — 自动赋予 Collider、射线吸附，场景"即开即用"
-    - :material-package-variant-closed: **一键部署** — Unity 插件直接导入，三步完成场景生成
+    - :material-package-variant-closed: **低门槛部署** — Docker 部署，Unity 插件三步完成场景生成
 
     [查看完整文档 :octicons-arrow-right-24:](sceneForge/index.md){ .card-link }
 
@@ -154,5 +152,5 @@ title: 元宇宙联合创新实验室
 </div>
 
 <div class="footer-copyright" markdown>
-© 2025 香港科技大学（广州）元宇宙联合创新实验室
+© 2025 <a href="https://bunnychen.top/about/MetaverseJointInnovationLaboratory/" target="_blank" rel="noopener">香港科技大学（广州）元宇宙联合创新实验室</a>
 </div>

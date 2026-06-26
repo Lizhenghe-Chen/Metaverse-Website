@@ -244,6 +244,13 @@ body[data-md-color-scheme="default"] .footer-copyright {
   flex-shrink: 0;
 }
 
+.hero-sponsors .sponsor-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+}
+
 .hero-sponsors .sponsor-logo {
   opacity: 0.65;
   transition: opacity 0.3s ease;

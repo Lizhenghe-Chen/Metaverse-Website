@@ -7,9 +7,9 @@
   <a class="md-button md-button--primary" href="https://gofile.me/7U4bu/RLbhv081O" target="_blank" rel="noopener noreferrer">🐳 下载 Docker 镜像</a>
 </div>
 
-| 环境 | 要求 |
-| :--- | :--- |
-| **客户端** | Unity 2022.3.20f1 LTS 以上 URP 管线 |
+| 环境             | 要求                                   |
+| :--------------- | :------------------------------------- |
+| **客户端** | Unity 2022.3.20f1 LTS 以上 URP 管线    |
 | **服务端** | Python 3.10+, FastAPI / Docker / Conda |
 
 ## 技术架构
@@ -24,12 +24,12 @@
 
 为了实现完整的场景生成管线，客户端主要与服务端的以下关键接口进行对接：
 
-| 接口 | 路径 | 说明 |
-| :--- | :--- | :--- |
-| Generate Endpoint | `/generate` | 异步提交生成任务，传递场景提示词及约束参数，返回任务唯一标识符 (Task ID) |
-| Status Endpoint | `/status/{task_id}` | 轮询查询任务进度，若任务完成则返回场景 JSON 的下载路径 |
-| Download Endpoint | `/download` | 获取并下载结构化的场景描述 JSON 文件至本地 jsonDataSaveFolder |
-| Asset Process Endpoint | `/process_scene_json` | 提交 JSON 数据请求处理并下载场景中包含的美术资源模型压缩包 |
+| 接口                   | 路径                    | 说明                                                                     |
+| :--------------------- | :---------------------- | :----------------------------------------------------------------------- |
+| Generate Endpoint      | `/generate`           | 异步提交生成任务，传递场景提示词及约束参数，返回任务唯一标识符 (Task ID) |
+| Status Endpoint        | `/status/{task_id}`   | 轮询查询任务进度，若任务完成则返回场景 JSON 的下载路径                   |
+| Download Endpoint      | `/download`           | 获取并下载结构化的场景描述 JSON 文件至本地 jsonDataSaveFolder            |
+| Asset Process Endpoint | `/process_scene_json` | 提交 JSON 数据请求处理并下载场景中包含的美术资源模型压缩包               |
 
 ---
 
@@ -97,35 +97,31 @@ docker run -d --name holoscene -p 8000:8000 --shm-size=2g \
 
 1. （中国大陆用户）配置 Docker 镜像加速器：
 
-    Docker Desktop: Preferences → Docker Engine，修改 `registry-mirrors`。
+   Docker Desktop: Preferences → Docker Engine，修改 `registry-mirrors`。
 
-    Linux: 编辑 `/etc/docker/daemon.json`：
+   Linux: 编辑 `/etc/docker/daemon.json`：
 
-    ```json
-    {
-      "registry-mirrors": [
-        "https://docker.1ms.run",
-        "https://dockerproxy.net",
-        "https://docker.m.daocloud.io"
-      ]
-    }
-    ```
-
+   ```json
+   {
+     "registry-mirrors": [
+       "https://docker.1ms.run",
+       "https://dockerproxy.net",
+       "https://docker.m.daocloud.io"
+     ]
+   }
+   ```
 2. 修改 `docker-compose.yml` 中的 `volumes` 字段，指向数据路径：
 
-    ```yaml
-    volumes:
-      - /Volumes/DoggyChen/objathor-assets:/Volumes/DoggyChen/objathor-assets:rw
-    ```
-
+   ```yaml
+   volumes:
+     - /Volumes/DoggyChen/objathor-assets:/Volumes/DoggyChen/objathor-assets:rw
+   ```
 3. 构建并启动容器：
 
-    ```bash
-    docker compose up -d --build
-    ```
-
+   ```bash
+   docker compose up -d --build
+   ```
 4. 首次运行（中国大陆用户需开启 VPN），执行 `bash init.sh`。若看到 `Generation complete for xxx. Scene saved and any other data saved to /app/data/scenes/...` 则表示生成成功。
-
 5. 服务默认监听 `8000` 端口。
 
 ---
@@ -149,9 +145,7 @@ docker run -d --name holoscene -p 8000:8000 --shm-size=2g \
 按插件界面按钮依次操作：
 
 1. **Generate Scene** — 向服务端提交生成任务。请求成功后，输出窗口（Log Output）会持续返回日志信息。生成过程约 10 分钟，与服务端大模型性能相关。
-
 2. **Request Processed Assets** — 向服务端请求美术资源（需服务端正确配置资产文件路径）。导入成功后，素材保存在 `Assets/Resources/ExportModels` 目录下。
-
 3. **生成场景** — 将 JSON 场景数据实例化为完整的 3D 场景，包含地面、墙体、天花板、门窗及各类内饰物件。
 
 ### 生成后操作
@@ -167,8 +161,8 @@ docker run -d --name holoscene -p 8000:8000 --shm-size=2g \
 
 ## 模块列表
 
-| 模块名称 | 描述 | 技术栈 |
-| :--- | :--- | :--- |
+| 模块名称        | 描述                      | 技术栈    |
+| :-------------- | :------------------------ | :-------- |
 | Holodeck Plugin | 基于 Unity 的场景生成插件 | Unity, C# |
 
 ## 了解更多
