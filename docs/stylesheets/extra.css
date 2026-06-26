@@ -151,21 +151,7 @@ body[data-md-color-scheme="default"] .scenario-card {
   --scenario-border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.highlights-section .tabbed-content ul li {
-  background: var(--highlight-bg);
-  border: var(--highlight-border);
-}
-
-body[data-md-color-scheme="slate"] .highlights-section .tabbed-content ul li,
-body:not([data-md-color-scheme="default"]) .highlights-section .tabbed-content ul li {
-  --highlight-bg: rgba(255, 255, 255, 0.03);
-  --highlight-border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-body[data-md-color-scheme="default"] .highlights-section .tabbed-content ul li {
-  --highlight-bg: rgba(255, 255, 255, 0.35);
-  --highlight-border: 1px solid rgba(0, 0, 0, 0.06);
-}
+/* highlights li 深浅色变量由下方主题块统一注入 */
 
 /* ---------- footer 分割线深浅适配 ---------- */
 .footer-copyright {
@@ -485,16 +471,29 @@ body[data-md-color-scheme="default"] .hero-sponsors .sponsor-logo {
   list-style: none;
 }
 
+/* 亮点卡片 */
 .highlights-section .tabbed-content ul li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.85rem;
-  padding: 1rem 1.25rem;
+  display: block;
+  padding: 1.25rem 1.5rem;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: all 0.25s ease;
   margin: 0;
+  font-size: 0.82rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.55;
+  background: var(--highlight-bg);
+  border: var(--highlight-border);
+  transition: all 0.25s ease;
+}
+
+body[data-md-color-scheme="slate"] .highlights-section .tabbed-content ul li,
+body:not([data-md-color-scheme="default"]) .highlights-section .tabbed-content ul li {
+  --highlight-bg: rgba(255, 255, 255, 0.03);
+  --highlight-border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body[data-md-color-scheme="default"] .highlights-section .tabbed-content ul li {
+  --highlight-bg: rgba(255, 255, 255, 0.35);
+  --highlight-border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .highlights-section .tabbed-content ul li::before {
@@ -508,25 +507,20 @@ body[data-md-color-scheme="default"] .hero-sponsors .sponsor-logo {
 }
 
 .highlights-section .tabbed-content ul li .twemoji {
-  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
   width: 1.25rem;
   height: 1.25rem;
-  margin-top: 0.1rem;
+  margin-right: 0.3rem;
   color: #4658FF;
   opacity: 0.85;
 }
 
 .highlights-section .tabbed-content ul li strong {
-  display: block;
-  font-size: 0.9rem;
+  display: inline;
+  font-size: 0.95rem;
   font-weight: 600;
-  margin-bottom: 0.15rem;
-}
-
-.highlights-section .tabbed-content ul li strong + * {
-  font-size: 0.8rem;
-  color: var(--md-default-fg-color--light);
-  line-height: 1.5;
+  color: var(--md-typeset-color);
 }
 
 /* 配图容器 */

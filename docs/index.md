@@ -68,7 +68,7 @@ title: 元宇宙联合创新实验室
       <figcaption>从提示词到完整 3D 场景的一键式转化</figcaption>
     </figure>
 
-    - :material-lightning-bolt:**自然语言驱动** — 输入"一间带落地窗的北欧风格卧室"，自动生成完整室内场景
+    - :material-lightning-bolt: **自然语言驱动** — 输入"一间带落地窗的北欧风格卧室"，自动生成完整室内场景
     - :material-database-sync: **双轨制资产管线** — 本地 AI2-THOR 预置库 + 云端 Objathor 海量资产库
     - :material-timer-sync: **非阻塞异步生成** — 生成过程不卡顿 Unity 主线程，实时监控任务进度
     - :material-axis-arrow: **物理落地对齐** — 自动赋予 Collider、射线吸附，场景"即开即用"
@@ -83,7 +83,7 @@ title: 元宇宙联合创新实验室
       <figcaption>文本驱动的高质量 3D 角色动作生成</figcaption>
     </figure>
 
-    - :material-text-recognition:**文本到动作** — 输入"一个人向前走然后跳起来"，自动生成对应骨骼动画
+    - :material-text-recognition: **文本到动作** — 输入"一个人向前走然后跳起来"，自动生成对应骨骼动画
     - :material-brain: **MoMask 深度学习** — 基于掩码建模的离散动作生成，支持多种动作风格
     - :material-blender: **Blender 原生集成** — 作为 Blender 插件运行，无缝融入 3D 创作工作流
     - :material-file-code: **BVH 格式支持** — 支持 BVH 动作文件的导入、导出与转换
